@@ -4,7 +4,7 @@ GET {{KolosPoprawa_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
-POST http://localhost:5000/api/appointments
+POST http://localhost:5000/api/clients
 Content-Type: application/json
 
 {
