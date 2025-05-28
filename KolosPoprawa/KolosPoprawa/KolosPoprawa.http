@@ -4,3 +4,21 @@ GET {{KolosPoprawa_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST http://localhost:5000/api/appointments
+Content-Type: application/json
+
+{
+  "client": {
+    "firstName": "John",
+    "lastName": "Yakuza",
+    "address": "Tenkaichi Street"
+    
+  },
+  "carId": 1,
+  "dateFrom": "2024-06-24",
+  "dateTo": "2024-06-26"
+  
+}
+
+
+###

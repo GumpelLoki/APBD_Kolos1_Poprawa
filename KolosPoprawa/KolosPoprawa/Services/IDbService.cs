@@ -5,4 +5,5 @@ namespace KolosPoprawa.Services;
 public interface IDbService
 {
     Task<ClientRentalDto> GetClientRentalAsync(int clientId);
+    Task AddClientRentalAsync(CreateClientRentalDto clientRental);
 }

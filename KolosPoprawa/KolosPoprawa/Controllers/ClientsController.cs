@@ -1,4 +1,5 @@
 ﻿using KolosPoprawa.Exceptions;
+using KolosPoprawa.Models.DTOs;
 using KolosPoprawa.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,5 +20,19 @@ public class ClientsController(IDbService _dbService) : ControllerBase
         {
             return NotFound(e.Message);
         }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddClientTask([FromBody] CreateClientRentalDto clientDto)
+    {
+        try
+        {
+            await _dbService.AddClientRentalAsync(clientDto);
+        }
+        catch (NotFoundException e)
+        {
+            return NotFound(e.Message);
+        }
+        return CreatedAtAction(nameof(GetClientRentals), clientDto);
     }
 }
